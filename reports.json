@@ -19,14 +19,14 @@
           "type": "single_line",
           "name": "Yellow Zone (days)",
           "description": "Provide the amount of days since request placement to mark a transaction in yellow zone",
-          "required": true
+          "required": false
         },
         {
           "id": "offset_red_days",
           "type": "single_line",
           "name": "Red Zone (days)",
           "description": "Provide the amount of days since request placement to mark a transaction in red zone",
-          "required": true
+          "required": false
         },
         {
           "id": "product",
