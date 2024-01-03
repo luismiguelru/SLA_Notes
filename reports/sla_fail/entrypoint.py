@@ -10,9 +10,9 @@ from reports.utils import convert_to_datetime, get_dict_element
 
 def generate(
     client=None,
-    input_data=None,
+    parameters=None,
     progress_callback=None,
-    renderer_type='xlsx',
+    renderer_type=None,
     extra_context_callback=None,
 ):
     try:
