@@ -1,0 +1,11 @@
+<data>
+
+{% for row in data %}
+ <row>
+  {% for col in row %}
+   <col>{{ col }}</col>
+  {% endfor %}
+ </row>
+{% endfor %}
+
+</data>
