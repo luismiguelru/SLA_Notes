@@ -3,7 +3,7 @@
 # Copyright (c) 2024, Ingram Micro
 # All rights reserved.
 import datetime
-
+import logging
 from connect.client import R
 
 from reports.utils import convert_to_datetime, get_dict_element
@@ -49,7 +49,7 @@ def generate(
     }
 
     for request in requests:
-        yield _process_line(request, levels)
+        yield _process_line(request, levels,client)
         progress += 1
         progress_callback(progress, total)
 
@@ -74,10 +74,28 @@ def _get_sla_level(awaiting_days, levels):
     else:
         return 'GREEN'
 
+def _get_conversation_messages(client,data):
+    first = data['id']
+    messages = client.collection('conversations')[first].collection('messages').all()
 
-def _process_line(data, levels):
+    # Sort the messages based on the 'created' timestamp
+    sorted_messages = sorted(messages, key=lambda x: x['created'], reverse=True)
+
+    for real_message in sorted_messages:
+        print("Message Value:", real_message['text'])
+
+        if "Indicator of Service Level Agreement" not in real_message['text']:
+            # Print the message and stop the iteration
+            print("Non-Indicator Message:", real_message['text'])
+            break
+
+    return real_message["text"]
+
+
+def _process_line(data, levels,client):
     awaiting_for_days = _get_awaiting_for(data)
     sla_level = _get_sla_level(awaiting_for_days, levels)
+    conversation_notes = _get_conversation_messages(client,data)
     return (
         data.get('id'),
         get_dict_element(data, 'asset', 'product', 'id'),
@@ -108,4 +126,5 @@ def _process_line(data, levels):
         get_dict_element(data, 'marketplace', 'id'),
         get_dict_element(data, 'marketplace', 'name'),
         sla_level,
+        conversation_notes,
     )
