@@ -1,9 +1,8 @@
-# Welcome to SLA_Report_Failure !
+# Welcome to SLA Report Notes !
 
 
-Hi we provide the coonversation notes of the pending request
-
+Connect SLA Reports with Notes for CloudBlue Vendors and Providers
 
 ## License
 
-**SLA_Report_Failure** is licensed under the *Apache Software License 2.0* license.
+**SLA_Notes** is licensed under the *Apache Software License 2.0* license.

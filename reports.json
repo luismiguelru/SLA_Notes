@@ -1,11 +1,11 @@
 {
-    "name": "SLA_Report_Failure",
+    "name": "SLA_Notes",
     "readme_file": "README.md",
     "version": "0.1.0",
     "language": "python",
     "reports": [
         {
-            "name": "SLA_Fail",
+            "name": "SLA_Notes",
             "readme_file": "reports/sla_fail/README.md",
             "entrypoint": "reports.sla_fail.entrypoint.generate",
             "audience": [
@@ -19,14 +19,14 @@
           "type": "single_line",
           "name": "Yellow Zone (days)",
           "description": "Provide the amount of days since request placement to mark a transaction in yellow zone",
-          "required": false
+          "required": true
         },
         {
           "id": "offset_red_days",
           "type": "single_line",
           "name": "Red Zone (days)",
           "description": "Provide the amount of days since request placement to mark a transaction in red zone",
-          "required": false
+          "required": true
         },
         {
           "id": "product",
