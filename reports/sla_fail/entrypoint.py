@@ -3,8 +3,6 @@
 # Copyright (c) 2024, Ingram Micro
 # All rights reserved.
 import datetime
-import Levenshtein
-
 from connect.client import R
 from collections import defaultdict
 
