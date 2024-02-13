@@ -160,7 +160,6 @@ def _actual_get_grouping_messages(client,jira_api_token):
             # Use the generated report for Jira updates
 
     report_generation = convert_list_jira_info(grouped_dict, jira_api_token)
-    print(report_generation)
     check_report_generation(report_generation,client)
 
     return report_generation
