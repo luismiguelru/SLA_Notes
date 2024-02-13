@@ -12,17 +12,16 @@ readme = "./README.md"
 [tool.poetry.dependencies]
 python = ">=3.8,<4"
 python-levenshtein = "^0.23.0"
-re = "^2.2.1"
 
 [tool.poetry.dev-dependencies]
 connect-cli = "^26.14"
-connect-openapi-client = "^24"
+connect-openapi-client = ">=25.15,<27.0"
 
 
 pytest = "^6.2.1"
 pytest-cov = "^2.10.1"
 pytest-mock = "^3.4"
-responses = "^0.12"
+responses = ">=0.14.0,<1"
 coverage = {extras = ["toml"], version = "^5.3.1"}
 isort = {extras = ["pyproject"], version = "^5.6.4"}
 flake8 = "^3.8.4"
