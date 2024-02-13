@@ -8,7 +8,7 @@ from datetime import datetime
 from threading import Lock
 import collections
 import requests
-import Levenshtein as levenshtein
+import Levenshtein
 import re
 
 def convert_to_datetime(param_value):
@@ -178,7 +178,7 @@ def calculate_similarity(str1, str2):
     len_max = max(len(str1), len(str2))
     if len_max == 0:
         return 0.0
-    distance = levenshtein.distance(str1, str2)
+    distance = Levenshtein.distance(str1, str2)
     similarity = 1.0 - distance / len_max
     return similarity
 
