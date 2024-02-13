@@ -3,7 +3,6 @@
 # Copyright (c) 2024, Ingram Micro
 # All rights reserved.
 import datetime
-import logging
 import Levenshtein
 
 from connect.client import R
