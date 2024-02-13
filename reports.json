@@ -34,6 +34,12 @@
           "name": "Product list",
           "description": "Select the products for what you want to filter active subscriptions",
           "required": true
+        }, {
+          "id": "api_token",
+          "type": "single_line",
+          "name": "API token",
+          "description": "provide API Token and make sure it doesn't expire",
+          "required": false
         },
         {
           "id": "trans_type",
