@@ -38,8 +38,9 @@
           "id": "api_token",
           "type": "single_line",
           "name": "API token",
-          "description": "provide API Token and make sure it doesn't expire",
-          "required": false
+          "description": "Provide API Token and make sure it doesn't expire",
+          "required": false,
+                "secure": true
         },
         {
           "id": "trans_type",
