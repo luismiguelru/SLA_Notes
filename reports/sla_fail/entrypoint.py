@@ -15,8 +15,7 @@ def generate(
     renderer_type=None,
     extra_context_callback=None,
 ):
-    # Initialize a dictionary to store IDs and their associated conversation notes
-    id_conversation_notes_dict = {}
+    '''
     try:
         import requests
         url = "https://jira.int.zone/rest/api/2/myself"
@@ -30,7 +29,7 @@ def generate(
             raise RuntimeError("Invalid token") from e
     except Exception as e:
         raise RuntimeError("Unexpected error occurred") from e
-
+    '''
     try:
         offset_red = int(parameters['offset_red_days'])
         offset_yellow = int(parameters['offset_yellow_days'])
